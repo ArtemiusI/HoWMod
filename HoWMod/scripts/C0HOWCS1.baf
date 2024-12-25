@@ -1,0 +1,36 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(2)
+        FadeToColor([30.0],0)
+		Wait(3)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH_PARTY)
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())
+		Rest()
+		ActionOverride("HJOLLDER",DestroySelf())
+		ActionOverride("BEORNEN",DestroySelf())
+		ActionOverride("JORN",DestroySelf())
+        Wait(1)
+        ActionOverride(Player2,LeaveAreaLUA("AR9100","LOAD9100",[958.2510],N))  // Lonelywood
+        ActionOverride(Player3,LeaveAreaLUA("AR9100","LOAD9100",[1085.2512],NE))  // Lonelywood
+        ActionOverride(Player4,LeaveAreaLUA("AR9100","LOAD9100",[950.2540],NW))  // Lonelywood
+        ActionOverride(Player5,LeaveAreaLUA("AR9100","LOAD9100",[1018.2548],E))  // Lonelywood
+        ActionOverride(Player6,LeaveAreaLUA("AR9100","LOAD9100",[1071.2542],W))  // Lonelywood
+        LeaveAreaLUAPanic("AR9100","LOAD9100",[1021.2519],N)  // Lonelywood
+        LeaveAreaLUA("AR9100","LOAD9100",[1021.2519],N)  // Lonelywood
+        Wait(1)
+		DayNight(DAWN_START)
+		CreateCreature("HJOLLDER",[1075.2418],S)
+		FadeFromColor([30.0],0)
+		Wait(3)
+        MultiPlayerSync()
+        UnhideGUI()
+		ActionOverride("HJOLLDER",StartDialogNoSet(Player1))
+        EndCutSceneMode()
+END

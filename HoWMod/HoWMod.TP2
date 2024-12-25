@@ -1,0 +1,13 @@
+BACKUP ~weidu_external/backup/HoWMod~
+AUTHOR ~The Artisan~
+
+BEGIN ~The Artisan's Corner: Heart of Winter Ending Tweak~ DESIGNATED 0
+
+COMPILE ~%MOD_FOLDER%/DIALOG/DIALOG.D~
+
+COMPILE ~%MOD_FOLDER%/SCRIPTS/C0HOWCS1.BAF~
+        ~%MOD_FOLDER%/SCRIPTS/C0HOWCS2.BAF~
+
+ACTION_FOR_EACH area_scripts IN 9600 9604 BEGIN
+EXTEND_TOP ~AR%area_scripts%.BCS~ ~%MOD_FOLDER%/SCRIPTS/AR%area_scripts%.BAF~
+END

@@ -1,0 +1,25 @@
+IF
+	Global("HOW_COMPLETED","GLOBAL",1)
+	Global("C0_HOW_DELAY_ENDING","GLOBAL",1)
+	Global("C0_HOW_END_NEW","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("C0_HOW_END_NEW","GLOBAL",1)
+	StartCutSceneMode()
+	CreateCreature("HJOLLDER",[808.921],NE)
+	CreateCreature("JORN",[683.913],NE)
+	CreateCreature("BEORNEN",[720.990],NE)
+	SmallWait(1)
+	CreateCreature("CUTSPY",[774.946],NE)
+	Wait(2)
+	MoveViewPoint([857.911],VERY_FAST)
+	ActionOverride(Player1,MoveToPoint([908.890]))
+	ActionOverride(Player2,MoveToPoint([945.833]))
+	ActionOverride(Player3,MoveToPoint([981.891]))
+	ActionOverride(Player4,MoveToPoint([999.811]))
+	ActionOverride(Player5,MoveToPoint([1043.872]))
+	ActionOverride(Player6,MoveToPoint([1050.810]))
+	Wait(8)
+	ActionOverride("HJOLLDER",StartDialogNoSet(Player1))
+	EndCutSceneMode()
+END

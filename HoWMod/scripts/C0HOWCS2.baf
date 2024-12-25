@@ -1,0 +1,18 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        FadeToColor([30.0],0)
+        Wait(2)
+        SetGlobal("DMWW_LEFT_9603","GLOBAL",1)
+        SetGlobal("GAME_OVER","MYAREA",1)
+        MultiPlayerSync()
+        StartMovie("HOWDRAG")
+        Wait(1)
+        SetWorldmap("worldmap")
+        SetMasterArea("ar2100")  // Kuldahar
+        RevealAreaOnMap("ar2100")  // Kuldahar
+        StartCutScene("LUA2109")
+END
